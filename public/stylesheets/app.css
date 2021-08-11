@@ -1,0 +1,30 @@
+*{ margin: 0; padding: 0; }
+
+#delete { display: inline; }
+
+.navbar{
+    background-image: url("https://somewherecafeandlounge.com/wp-content/uploads/2018/02/sw-chalk-shop-divider-1920x100.png");
+    background-size: cover;
+    margin-bottom: 3em;
+}
+.navbar-brand{
+    color: blueviolet;
+    font-size: 27px;
+    font-weight: 700;
+}
+.navbar-brand img{
+    border-radius: 100%;
+}
+
+p{
+    font-size: 17px;
+}
+.column h4{
+    font-weight: 1000;
+    color: #999;
+}
+
+.image{
+    width: 100%;
+}
+

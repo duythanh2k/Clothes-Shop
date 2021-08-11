@@ -1,0 +1,43 @@
+<%- include("../partials/header") %>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3"><i style="color: blueviolet;">Clothes</i> Shop</h1>
+        <p class="lead">
+            Welcome to the world of clothes!
+            <br>
+            Hope you'll find something would suit you
+        </p>
+        <hr style="width: 40%; margin-left: 0;" class="my-3">
+        <p class="lead">
+            <a class="ui big violet inverted button" href="/clothes/new" role="button">Add new product</a>
+        </p>
+    </div>
+</div>
+
+<div class="container">
+
+    <h1 style="text-align: center;">SHOP NOW</h1>
+
+    <div class="row text-center">
+        <% clothes.forEach(cloth => { %>
+            <div class="col-md-3 col-sm-6">
+
+                <a href="/clothes/<%= cloth._id %>" style="text-decoration: none; color: black;">
+                    <div class="img-thumbnail">
+                        <img width="100%" src="<%= cloth.image %>" alt="">
+                        <div class="caption">
+                            <h4><%= cloth.name %></h4>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        <% }); %>
+    </div>
+
+    
+
+</div>
+
+<%- include("../partials/footer") %> 

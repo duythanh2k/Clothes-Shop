@@ -1,0 +1,42 @@
+<%- include("../partials/header") %>
+
+<div class="ui main text container segment">
+        <h1 class="ui huge header" style="text-align: center;">EDIT <%= cloth.name %></h1>
+        <div class="ui form">
+            <form class="ui form" action="/clothes/<%= cloth._id %>?_method=PUT" method="POST">
+                <div class="field">
+                    <label>Name</label>
+                    <input type="text" name="cloth[name]" value="<%= cloth.name %>">
+                </div>
+                <div class="field">
+                    <label>Image</label>
+                    <input type="text" name="cloth[image]" value="<%= cloth.image %>">
+                </div>
+                <div class="field">
+                    <label>Price</label>
+                    <input type="number" name="cloth[price]" min="1" step="0.01" value="<%= cloth.price %>">
+                </div>
+                <div class="field">
+                    <label>Brand</label>
+                    <input type="text" name="cloth[brand]" value="<%= cloth.brand %>">
+                </div>
+                <div class="field">
+                    <label>Description</label>
+                    <textarea name="cloth[description]"><%= cloth.description %></textarea>
+                </div>
+                <div class="field">
+                    <label>Size (cm)</label>
+                    <input class="form-control" type="range" name="cloth[size]" min="1" max="500" value="<%= cloth.size %>"
+                            oninput="this.nextElementSibling.value = this.value">
+                    <input type="number" min="1" max="500" value="<%= cloth.size %>"
+                            onkeyup="if(parseInt(this.value)>500){ this.value=500; return false; }"
+                            oninput="this.previousElementSibling.value = this.value"
+                            onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                </div>
+                <input class="ui big black button" type="submit" value="UPDATE">
+            </form>
+            <a href="/clothes/<%= cloth._id %>">&lt&ltGo Back</a>
+        </div>
+</div>
+
+<%- include("../partials/footer") %> 
